@@ -1,0 +1,15 @@
+<nav>
+ <ul>
+   <li class="nav-item" [routerLink]="['/']">Home</li>
+   <li class="nav-item" [routerLink]="['/', 'form-grid']">Form Grid</li>
+   <li class="nav-item" [routerLink]="['/', 'form-input']">Form Input</li>
+   <li class="nav-item" [routerLink]="['/', 'form-custom']">Form Custom</li>
+   <li class="nav-item" [routerLink]="['/', 'form-divider']">Form Divider</li>
+ </ul>
+</nav>
+<div id="content">
+  <router-outlet></router-outlet>
+</div>
+<footer>
+
+</footer>
