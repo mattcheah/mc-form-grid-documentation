@@ -1,18 +1,23 @@
 <div class="card">
-  <div class="card-body text-center">
-    <h1 class="">MC-Form-Grid</h1>
-    <p class="">An Angular NPM Package for organizing Reactive Forms into easy layout grids.</p>
+  <div class="card-body ">
+    <h1 class="text-center">MC-Form-Grid</h1>
+    <h4 class="text-center">An Angular NPM Package for organizing Reactive Forms into easy layout grids.</h4>
+    <p>Made to provide an easy way to lay out forms with perfectly aligned labels and columns without having to write the CSS yourself. Check out the <a [routerLink]="['features']">full list of features</a>, or scroll down to see more examples.</p>
 
+    <div class="m-5"></div>
     <mc-form-grid columns="2">
       <mc-form-input label="Input 1">
-        <input class="form-control" type="text">
+        <input class="form-control" type="text" placeholder="I take up column 1">
       </mc-form-input>
       <mc-form-input label="Input 2">
-        <input class="form-control" type="text">
+        <input class="form-control" type="text" placeholder="I take up column 2">
       </mc-form-input>
-      <mc-form-divider label="Divider"></mc-form-divider>
-      <mc-form-input label="Textarea 1" rowSpan="2">
-        <textarea class="form-control" placeholder="Textarea 1"></textarea>
+      <mc-form-divider label="My Divider Label"></mc-form-divider>
+      <mc-form-input label="Textarea 1" columnSpan="2">
+        <textarea class="form-control" placeholder="I take up 2 columns!"></textarea>
+      </mc-form-input>
+      <mc-form-input label="Textarea 2" rowSpan="2">
+        <textarea class="form-control" rows="3" placeholder="I take up 2 rows!"></textarea>
       </mc-form-input>
       <mc-form-input label="Select 1" startingCol="2">
         <select class="form-control">
@@ -26,5 +31,35 @@
       </mc-form-input>
     </mc-form-grid>
 
+    <p class=" mt-3 text-center">In the Component:</p>
+    <div class="code">
+      <div style="color: #f8f8f2; background-color: #272822; font-family: Consolas, 'Courier New', monospace; font-size: 14px; line-height: 19px; white-space: pre;">
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-grid</span>&nbsp;<span style="color: #a6e22e;">columns</span>=<span style="color: #e6db74;">"2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Input&nbsp;1"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">input</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&nbsp;<span style="color: #a6e22e;">type</span>=<span style="color: #e6db74;">"text"</span>&nbsp;<span style="color: #a6e22e;">placeholder</span>=<span style="color: #e6db74;">"I&nbsp;take&nbsp;up&nbsp;column&nbsp;1"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Input&nbsp;2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">input</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&nbsp;<span style="color: #a6e22e;">type</span>=<span style="color: #e6db74;">"text"</span>&nbsp;<span style="color: #a6e22e;">placeholder</span>=<span style="color: #e6db74;">"I&nbsp;take&nbsp;up&nbsp;column&nbsp;2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-divider</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"My&nbsp;Divider&nbsp;Label"</span>&gt;&lt;/<span style="color: #f92672;">mc-form-divider</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Textarea&nbsp;1"</span>&nbsp;<span style="color: #a6e22e;">columnSpan</span>=<span style="color: #e6db74;">"2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">textarea</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&nbsp;<span style="color: #a6e22e;">placeholder</span>=<span style="color: #e6db74;">"I&nbsp;take&nbsp;up&nbsp;2&nbsp;columns!"</span>&gt;&lt;/<span style="color: #f92672;">textarea</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Textarea&nbsp;2"</span>&nbsp;<span style="color: #a6e22e;">rowSpan</span>=<span style="color: #e6db74;">"2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">textarea</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&nbsp;<span style="color: #a6e22e;">rows</span>=<span style="color: #e6db74;">"3"</span>&nbsp;<span style="color: #a6e22e;">placeholder</span>=<span style="color: #e6db74;">"I&nbsp;take&nbsp;up&nbsp;2&nbsp;rows!"</span>&gt;&lt;/<span style="color: #f92672;">textarea</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Select&nbsp;1"</span>&nbsp;<span style="color: #a6e22e;">startingCol</span>=<span style="color: #e6db74;">"2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">select</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">option</span>&gt;Select&nbsp;1&lt;/<span style="color: #f92672;">option</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">select</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Select&nbsp;2"</span>&nbsp;<span style="color: #a6e22e;">startingCol</span>=<span style="color: #e6db74;">"2"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">select</span>&nbsp;<span style="color: #a6e22e;">class</span>=<span style="color: #e6db74;">"form-control"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">option</span>&gt;Select&nbsp;2&lt;/<span style="color: #f92672;">option</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">select</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-grid</span>&gt;</div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,11 +1,33 @@
-<nav class="navbar">
- <ul class="nav">
-   <li class="nav-item" [routerLink]="['/']">Home</li>
-   <li class="nav-item" [routerLink]="['/', 'form-grid']">Form Grid</li>
-   <li class="nav-item" [routerLink]="['/', 'form-input']">Form Input</li>
-   <li class="nav-item" [routerLink]="['/', 'form-custom']">Form Custom</li>
-   <li class="nav-item" [routerLink]="['/', 'form-divider']">Form Divider</li>
- </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!-- <div class="collapse navbar-collapse"> -->
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/']">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/', 'form-grid']">
+          Form Grid
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/', 'form-input']">
+          Form Input
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/', 'form-custom']">
+          Form Custom
+        </a>
+        </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/', 'form-divider']">
+          Form Divider
+        </a>
+        </li>
+    </ul>
+  <!-- </div> -->
 </nav>
 <div id="content">
   <router-outlet></router-outlet>
