@@ -8,10 +8,6 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-  path: 'features',
-  component: HomeComponent
-  },
-  {
   path: 'form-grid',
   component: FormGridComponent
   },
