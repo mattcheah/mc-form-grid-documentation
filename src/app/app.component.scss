@@ -2,6 +2,12 @@
   padding: 2vw 10vw;
 }
 
+.navbar-dark .dropdown-item:hover, .navbar-dark .dropdown-item:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #5a5a5a;
+}
+
 
 ::ng-deep #labeled-line #divider-label {
   font-size:1.2rem;

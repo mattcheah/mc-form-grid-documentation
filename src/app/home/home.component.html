@@ -6,6 +6,19 @@
 
     <hr>
     <p>Install using <code>npm i mc-form-grid --save</code> or visit the <a href="https://www.npmjs.com/package/mc-form-grid">NPM page</a>.</p>
+    <p>Then import MCFormGridModule in the Angular Module you want to use it in.</p>
+    <div class="code">
+      <div style="color: #f8f8f2; background-color: #272822; font-family: Consolas, 'Courier New', monospace; font-size: 14px; line-height: 19px; white-space: pre;">
+        <div><span style="color: #f92672;">import</span>&nbsp; {{ '{' }}&nbsp;McFormGridModule&nbsp;{{ '}' }}&nbsp;<span style="color: #f92672;">from</span>&nbsp;<span style="color: #e6db74;">'mc-form-grid'</span>;</div>
+        <br />
+        <div>@<span style="color: #a6e22e; text-decoration-line: underline;">NgModule</span>({{ '{' }}</div>
+        <div>&nbsp;&nbsp;declarations:&nbsp;[</div>
+        <div>&nbsp;&nbsp;],</div>
+        <div>&nbsp;&nbsp;imports:&nbsp;[</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">McFormGridModule</span>,</div>
+        <div>&nbsp;],</div>
+      </div>
+    </div>
     <p>See the <a href="https://github.com/mattcheah/mc-form-grid">GitHub Repo Here</a> to help contribute!</p>
     <hr>
 
@@ -107,7 +120,7 @@
         <div style="line-height: 19px;">
         <div style="line-height: 19px;">
         <div>&lt;<span style="color: #f92672;">mc-form-grid</span>&nbsp;<span style="color: #a6e22e;">columns</span>=<span style="color: #e6db74;">"3"</span>&gt;</div>
-        <div>&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Very&nbsp;Long&nbsp;Label&nbsp;Here"</span>&gt;</div>
+        <div>&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">label</span>=<span style="color: #e6db74;">"Extremely&nbsp;Long&nbsp;Label&nbsp;Here"</span>&gt;</div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #f92672;">input</span>&nbsp;<span style="color: #a6e22e;">type</span>=<span style="color: #e6db74;">"text"</span>&gt;</div>
         <div>&nbsp;&nbsp;&lt;/<span style="color: #f92672;">mc-form-input</span>&gt;</div>
         <div>&nbsp;&nbsp;&lt;<span style="color: #f92672;">mc-form-input</span>&nbsp;<span style="color: #a6e22e;">*ngFor</span>=<span style="color: #e6db74;">"let&nbsp;a&nbsp;of&nbsp;[1,2,3,4,5]"</span>&nbsp;<span style="color: #a6e22e;">[label]</span>=<span style="color: #e6db74;">"'Input&nbsp;'&nbsp;+&nbsp;a"</span>&gt;</div>

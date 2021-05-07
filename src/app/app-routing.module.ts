@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DefaultsComponent } from './defaults/defaults.component';
 import { FormCustomComponent } from './form-custom/form-custom.component';
 import { FormDividerComponent } from './form-divider/form-divider.component';
 import { FormGridComponent } from './form-grid/form-grid.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
   path: 'form-divider',
   component: FormDividerComponent
+  },
+  {
+  path: 'defaults',
+  component: DefaultsComponent
   },
   {
     path: '',

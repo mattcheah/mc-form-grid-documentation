@@ -1,1 +1,161 @@
-<p>form-input works!</p>
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Form Input Component</h1>
+    <h3 class="text-center"><code>mc-form-input</code></h3>
+
+    <h4>Component Input Directives:</h4>
+    <table class="table api-table table-striped">
+      <thead>
+        <tr>
+          <td>Directive</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>label</span></td>
+          <td>string</td>
+          <td>The string that will be displayed along side the input, to note what goes inside the input.</td>
+        </tr>
+        <tr>
+          <td><span>startingCol</span></td>
+          <td>string</td>
+          <td>A number string of the starting column. If the grid has 3 columns and you want it to start at 2, you put 2 here.</td>
+        </tr>
+        <tr>
+          <td><span>columnSpan</span></td>
+          <td>number</td>
+          <td>The number of columns that the input will take up. Defaults to 1.</td>
+        </tr>
+        <tr>
+          <td><span>rowSpan</span></td>
+          <td>number</td>
+          <td>The number of rows that the input will take up. Defaults to 1.</td>
+        </tr>
+        <tr>
+          <td><span>labelWidth</span></td>
+          <td>string</td>
+          <td>Sets the width of the label (in the current column). Setting it to be smaller than the space the text currently takes up will wrap the label text.
+            Can be set in units of px, em, rem, vw, and vh. (eg. labelWidth="100px", labelWidth="2rem", labelWidth="20vh")</td>
+        </tr>
+        <tr>
+          <td><span>alignVertical</span></td>
+          <td>boolean</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <h5>Question Icon Tooltip</h5>
+    <p>Input Directives for adding an icon to the end of an input that contains extra information in a hover tooltip.</p>
+    <table class="table api-table table-striped">
+      <thead>
+        <tr>
+          <td>Directive</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>questionText</span></td>
+          <td>string | TemplateRef&lt;any></td>
+          <td>A provided string or TemplateRef that populates a ? icon with a popover at the end of the input. If a value is provided the icon will be created automatically.</td>
+        </tr>
+        <tr>
+          <td><span>questionTitle</span></td>
+          <td>string</td>
+          <td>If a questionText value is also provided, the tooltip/popover box creates a title area with this string as the title. </td>
+        </tr>
+        <tr>
+          <td><span>questionPlacement</span></td>
+          <td>'top' | 'left' | 'right' | 'bottom'</td>
+          <td>Determines from which direction the tooltip/popover will extend from the icon. Useful for icons that are pushed up against the edge of the window. Default: 'top'</td>
+        </tr>
+        <tr>
+          <td><span>containerBody</span></td>
+          <td>boolean</td>
+          <td>If true, the popover container is appended to the html &lt;body> element instead of the icon element. This can solve z-index and accessibility issues. Defaults to true</td>
+        </tr>
+        <tr>
+          <td><span>tooltipLocation</span></td>
+          <td>'over-label' | 'icon-end' | 'label-end'</td>
+          <td>
+            By Default, an input-button icon wil appear at the end of the input. ('icon-end')<br>
+            If this value is 'over-label', hovering over the label will display the popover.<br>
+            If this label is label-end, an icon will appear at the end of the label. NOTE: in order for this to look good, alignVertical must be set to true.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <h5>Error Messages and Highlighting</h5>
+    <p>Input directives used to display error messages when an input is invalid. </p>
+    <p>Use the <code>control</code> and <code>validationMessages</code> inputs for better control over reactive forms. </p>
+    <p>Use the <code>errorMsg</code> and <code>invalidInput</code> inputs for template-driven forms.</p>
+    <table class="table api-table table-striped">
+      <thead>
+        <tr>
+          <td>Directive</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>control</span></td>
+          <td>FormControl</td>
+          <td>Provide a FormControl to access the FormControl's errors object and display the corresponding validation message in <code>validationMessages</code></td>
+        </tr>
+        <tr>
+          <td><span>validationMessages</span></td>
+          <td>{{ '{' }} [x: string]: string {{ '}' }}</td>
+          <td>Provide an object where the key is one of the FormControl's potential errors, and the value is the message you want displayed when that error is true. </td>
+        </tr>
+        <tr>
+          <td><span>errorMsg</span></td>
+          <td>string | string[]</td>
+          <td>A string message to display whenever <code>invalidInput</code> is true. A string array could originally have been passed in for multi-inputs, but that property is now deprecated. Use at your own risk. </td>
+        </tr>
+        <tr>
+          <td><span>invalidInput</span></td>
+          <td>boolean | boolean[]</td>
+          <td>If true, display the <code>errorMsg</code> passed in. Set this property up to change depending on registered changes from the input.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <h5>Deprecated</h5>
+    <table class="table api-table table-striped">
+      <thead>
+        <tr>
+          <td>Directive</td>
+          <td>Type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>missingInputText</span> [DEPRECATED]</td>
+          <td>string | string[]</td>
+          <td>[DEPRECATED - Use at your own risk] A string that will appear when the contained input has an ngModel, has been touched (has clas
+            This is used to instruct the user what they need to fix when they are filling out their form.</td>
+        </tr>
+        <tr>
+          <td><span>multiInput</span> [DEPRECATED]</td>
+          <td>boolean</td>
+          <td>[DEPRECATED - Use at your own risk] A boolean directive that determines if the input container will hold multiple inputs on the same line.
+            Setting this to true will turn .col-b into a flex container, which will automatically display inputs on the same lines.
+            NOTE: Using this with missingInputText will only work on first contained input, unless you pass in an array of missingInputTexts, which will be applied in order.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

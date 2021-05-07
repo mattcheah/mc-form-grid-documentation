@@ -11,10 +11,11 @@ import { FormGridComponent } from './form-grid/form-grid.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { FormCustomComponent } from './form-custom/form-custom.component';
 import { FormDividerComponent } from './form-divider/form-divider.component';
-import { McFormGridModule } from 'mc-form-grid';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeValidationsComponent } from './home/home-validations/home-validations.component';
 import { HomeTooltipComponent } from './home/home-tooltip/home-tooltip.component';
+import { DefaultsComponent } from './defaults/defaults.component';
+import { McFormGridModule } from 'mc-form-grid';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeTooltipComponent } from './home/home-tooltip/home-tooltip.component
     FormCustomComponent,
     FormDividerComponent,
     HomeValidationsComponent,
-    HomeTooltipComponent
+    HomeTooltipComponent,
+    DefaultsComponent
   ],
   imports: [
     McFormGridModule,
@@ -34,7 +36,7 @@ import { HomeTooltipComponent } from './home/home-tooltip/home-tooltip.component
     BrowserAnimationsModule,
     NgbModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
