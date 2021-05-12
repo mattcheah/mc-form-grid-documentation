@@ -16,6 +16,7 @@ import { HomeValidationsComponent } from './home/home-validations/home-validatio
 import { HomeTooltipComponent } from './home/home-tooltip/home-tooltip.component';
 import { DefaultsComponent } from './defaults/defaults.component';
 import { McFormGridModule } from 'mc-form-grid';
+import { InstallComponent } from './install/install.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { McFormGridModule } from 'mc-form-grid';
     FormDividerComponent,
     HomeValidationsComponent,
     HomeTooltipComponent,
-    DefaultsComponent
+    DefaultsComponent,
+    InstallComponent
   ],
   imports: [
     McFormGridModule,

@@ -1,1 +1,112 @@
-<p>defaults works!</p>
+<div class="card">
+  <div class="card-body">
+    <h1 class="text-center">Setting App-Wide Defaults</h1>
+
+    <p>All properties set on these components can be set as a default in your importing module.
+      This is mostly useful for properties that you absolutely want to set app-wide, like
+      <code>textAlignLeft</code> or <code>errorHighlightOnTouch</code> on Form Grids, or even <code>toolTipLocation</code> on Form Inputs.
+    </p>
+
+    <p>You can also adjust 2 colors:</p>
+    <ul>
+      <li><code>primaryColor</code> - A color which (currently) <em>only</em> changes the color of the icon on a questionText tooltip. (The color of your label text depends on the Form Grid's parent)</li>
+      <li><code>errorColor</code> - The color of the text and input highlight when there is an ng-invalid form item and <code>errorHighlight</code> is true</li>
+    </ul>
+
+    <p>To set these defaults, you must pass in a default options object in your module's providers:</p>
+
+    <div class="code">
+      <div style="color: #f8f8f2; background-color: #272822; font-family: Consolas, 'Courier New', monospace; font-size: 14px; line-height: 19px; white-space: pre;">
+        <div><span style="color: #f92672;">import</span>&nbsp;{{ "{" }}</div>
+        <div>&nbsp;&nbsp;McFormGridModule,</div>
+        <div>&nbsp;&nbsp;FORM_GRID_OPTIONS,</div>
+        <div>&nbsp;&nbsp;COLOR_OPTIONS,</div>
+        <div>}&nbsp;<span style="color: #f92672;">from</span>&nbsp;<span style="color: #e6db74;">'mc-form-grid'</span>;</div>
+        <br />
+        <div><span style="color: #88846f;">// .... Module Here</span></div>
+      </div>
+      <div style="color: #f8f8f2; background-color: #272822; font-family: Consolas, 'Courier New', monospace; font-size: 14px; line-height: 19px; white-space: pre;">
+        <div>providers:&nbsp;[</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{ '{' }}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;provide:&nbsp;FORM_GRID_OPTIONS,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useValue:&nbsp; {{ '{' }}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boldLabel:&nbsp;<span style="color: #ae81ff;">true</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textAlignLeft:&nbsp;<span style="color: #ae81ff;">true</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorHighlightOnTouched:&nbsp;<span style="color: #ae81ff;">false</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appendColon:&nbsp;<span style="color: #ae81ff;">true</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{ '{' }}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;provide:&nbsp;COLOR_OPTIONS,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;useValue:&nbsp; {{ '{' }}</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorColor:&nbsp;<span style="color: #e6db74;">'#ff4010'</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;primaryColor:&nbsp;<span style="color: #e6db74;">'#212529'</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }},</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }},</div>
+        <div>&nbsp;],</div>
+      </div>
+    </div>
+
+    <p>In the above example, we importing <code>FORM_GRID_OPTIONS</code> and <code>COLOR_OPTIONS</code> from 'mc-form-grid', but we can provide other default value objects.</p>
+
+    <ul>
+      <li>FORM_GRID_OPTIONS</li>
+      <li>FORM_INPUT_OPTIONS</li>
+      <li>FORM_CUSTOM_OPTIONS</li>
+      <li>COLOR_OPTIONS</li>
+    </ul>
+
+    <p>Below are the types and values that can be passed into these options objects to override the defaults.</p>
+
+    <div class="code">
+      <div style="color: #f8f8f2; background-color: #272822; font-family: Consolas, 'Courier New', monospace; font-size: 14px; line-height: 19px; white-space: pre;">
+        <div><span style="color: #66d9ef; font-style: italic;">interface</span>&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">FormGridOptions</span>&nbsp;{{ '{' }}</div>
+        <div>&nbsp;&nbsp;<span style="color: #88846f;">//&nbsp;Width&nbsp;values&nbsp;are&nbsp;best&nbsp;in&nbsp;'px'&nbsp;but&nbsp;can&nbsp;be&nbsp;others&nbsp;'em',&nbsp;'rem',&nbsp;'vw',&nbsp;'%'&nbsp;etc.</span></div>
+        <div>&nbsp;&nbsp;labelWidth<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;labelPadding<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;maxLabelWidth<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;columns<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;boldLabel<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;appendColon<span style="color: #f92672;">:</span><span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;textAlignLeft<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;errorHighlightOnTouched<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;errorHighlight<span style="color: #f92672;">:</span><span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>}</div>
+        <br />
+        <div><span style="color: #66d9ef; font-style: italic;">interface</span>&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">FormInputOptions</span>&nbsp;{{ '{' }}</div>
+        <div>&nbsp;&nbsp;label<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;columnSpan<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;rowSpan<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;labelWidth<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;missingInputText<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>&nbsp;<span style="color: #f92672;">|</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>[];</div>
+        <div>&nbsp;&nbsp;multiInput<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;startingCol<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;questionText<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;questionTitle<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;questionPlacement<span style="color: #f92672;">:</span>&nbsp;<span style="color: #e6db74;">'top'</span>&nbsp;<span style="color: #f92672;">|</span>&nbsp;<span style="color: #e6db74;">'left'</span>&nbsp;<span style="color: #f92672;">|</span>&nbsp;<span style="color: #e6db74;">'right'</span>&nbsp;<span style="color: #f92672;">|</span>&nbsp;<span style="color: #e6db74;">'bottom'</span>;</div>
+        <div>&nbsp;&nbsp;containerBody<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;errorMsg<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;invalidInput<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;control<span style="color: #f92672;">:</span>&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">FormControl</span>;</div>
+        <div>&nbsp;&nbsp;validationMessages<span style="color: #f92672;">:</span>&nbsp; {{ '{' }}&nbsp;[<span style="color: #fd971f; font-style: italic;">x</span><span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>]<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>&nbsp;};</div>
+        <div>&nbsp;&nbsp;alignVertical<span style="color: #f92672;">:</span><span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>}</div>
+        <br />
+        <div><span style="color: #66d9ef; font-style: italic;">interface</span>&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">FormCustomOptions</span>&nbsp; {{ '{' }}</div>
+        <div>&nbsp;&nbsp;label<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;noLabel<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">boolean</span>;</div>
+        <div>&nbsp;&nbsp;columnSpan<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;labelWidth<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>&nbsp;&nbsp;startingCol<span style="color: #f92672;">:</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">string</span>&nbsp;<span style="color: #f92672;">|</span>&nbsp;<span style="color: #66d9ef; font-style: italic;">number</span>;</div>
+        <div>}</div>
+        <br />
+        <div><span style="color: #66d9ef; font-style: italic;">interface</span>&nbsp;<span style="color: #a6e22e; text-decoration-line: underline;">ColorOptions</span>&nbsp;{{ '{' }}</div>
+        <div>&nbsp;&nbsp;<span style="color: #88846f;">//&nbsp;Hex&nbsp;or&nbsp;rgb()&nbsp;value</span></div>
+        <div>&nbsp;&nbsp;primaryColor<span style="color: #f92672;">:</span><span style="color: #66d9ef; font-style: italic;">string</span>;&nbsp;</div>
+        <div>&nbsp;&nbsp;errorColor<span style="color: #f92672;">:</span><span style="color: #66d9ef; font-style: italic;">string</span>;</div>
+        <div>}</div>
+
+        </div>
+      </div>
+  </div>
+</div>

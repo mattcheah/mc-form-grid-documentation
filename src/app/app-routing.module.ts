@@ -6,6 +6,7 @@ import { FormDividerComponent } from './form-divider/form-divider.component';
 import { FormGridComponent } from './form-grid/form-grid.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { HomeComponent } from './home/home.component';
+import { InstallComponent } from './install/install.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
   path: 'defaults',
   component: DefaultsComponent
+  },
+  {
+  path: 'install',
+  component: InstallComponent
   },
   {
     path: '',

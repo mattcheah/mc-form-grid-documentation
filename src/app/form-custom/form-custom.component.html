@@ -1,9 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h1 class="text-center"></h1>
 
-    <h4>Component Directives:</h4>
-    <table class="table">
+    <h1 class="text-center">Form Custom</h1>
+    <h3 class="text-center"><code>mc-form-custom</code></h3>
+
+    <p>The Form Custom component is similar to the Form-Input component. It's a smaller component that doesn't have the features of a Form Input (question icon tooltip, form error messages). Useful for things like Form Titles and explanation text. </p>
+
+    <h4>Component Input Directives:</h4>
+    <table class="table api-table table-striped">
       <thead>
         <tr>
           <td>Directive</td>
@@ -13,9 +17,30 @@
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><span>label</span></td>
+          <td>string</td>
+          <td>The string that will be displayed along side the input, to note what goes inside the input.</td>
+        </tr>
+        <tr>
+          <td><span>noLabel</span></td>
+          <td>boolean</td>
+          <td>Setting this to true will combine the label column and the content column, allowing you to align your custom content with other labels on the grid.</td>
+        </tr>
+        <tr>
+          <td><span>startingCol</span></td>
+          <td>string</td>
+          <td>A number string of the starting column. If the grid has 3 columns and you want it to start at 2, you put 2 here.</td>
+        </tr>
+        <tr>
+          <td><span>columnSpan</span></td>
+          <td>number</td>
+          <td>The number of columns that the input will take up. Defaults to 1.</td>
+        </tr>
+        <tr>
+          <td><span>labelWidth</span></td>
+          <td>string</td>
+          <td>Sets the width of the label (in the current column). Setting it to be smaller than the space the text currently takes up will wrap the label text.
+            Can be set in units of px, em, rem, vw, and vh. (eg. labelWidth="100px", labelWidth="2rem", labelWidth="20vh")</td>
         </tr>
       </tbody>
     </table>

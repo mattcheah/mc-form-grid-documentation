@@ -1,9 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h1 class="text-center"></h1>
+    <h1 class="text-center">Form Divider</h1>
+    <h3 class="text-center"><code>mc-form-input</code></h3>
+
+    <p>A Form Divider is just a simple line with top/bottom margin that separates sections of a form. </p>
+    <p>Passing in a <code>[label]</code> will add that label in the middle of the line. You can also optionally set the width of the line and the top/bottom margin</p>
 
     <h4>Component Directives:</h4>
-    <table class="table">
+    <table class="table api-table table-striped">
       <thead>
         <tr>
           <td>Directive</td>
@@ -13,9 +17,19 @@
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><span>label</span></td>
+          <td>string</td>
+          <td>The label that appears in the middle of the divider</td>
+        </tr>
+        <tr>
+          <td><span>width</span></td>
+          <td>string</td>
+          <td>Default width of 100% of the Form Grid width, but can be changed to be smaller</td>
+        </tr>
+        <tr>
+          <td><span>margin</span></td>
+          <td>string</td>
+          <td>A value to set the top and bottom margin property. Defaults to 10px.</td>
         </tr>
       </tbody>
     </table>

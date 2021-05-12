@@ -6,15 +6,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+a {
+  text-decoration: underline;
+}
+
 .card {
   margin: 50px 0;
 }
 
 .code, code {
-  background: #272822;
+  background: #e0e0e0;
   padding:5px;
   margin:10px 0;
   overflow-x:auto;
+  color: #940540;
 }
 
 input, select, textarea {
@@ -54,7 +59,7 @@ textarea {
     span {
       padding:1px;
       background-color:#e0e0e0;
-      // color: #e83e8c;
+      color: #940540;
       white-space: pre;
       font-family:'Courier New', Courier, monospace;
     }
